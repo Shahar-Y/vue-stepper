@@ -5,7 +5,8 @@
             <div class="steps-wrapper">
                 <template v-if="topButtons">
                     <div v-if="currentStep.index > 0" class="stepper-button-top previous" @click="backStep()">
-                        <i class="material-icons">keyboard_arrow_left</i>
+                        <i v-if="isRTL" class="material-icons">keyboard_arrow_right</i>
+                        <i v-else class="material-icons">keyboard_arrow_left</i>
                     </div>
                 </template>
                 <template v-for="(step, index) in steps">
@@ -22,7 +23,8 @@
                     </div>
                 </template>
                 <div v-if="topButtons" :class="['stepper-button-top next', !canContinue ? 'deactivated' : '']" @click="nextStep()">
-                    <i class="material-icons">keyboard_arrow_right</i>
+                    <i v-if="isRTL" class="material-icons">keyboard_arrow_left</i>
+                    <i v-else class="material-icons">keyboard_arrow_right</i>
                 </div>
             </div>
         </div>
@@ -38,12 +40,14 @@
         </div>
         <div :class="['bottom', (currentStep.index > 0) ? '' : 'only-next']">
             <div v-if="currentStep.index > 0" class="stepper-button previous" @click="backStep()">
-                <i class="material-icons">keyboard_arrow_left</i>
+                <i v-if="isRTL" class="material-icons">keyboard_arrow_right</i>
+                <i v-else class="material-icons">keyboard_arrow_left</i>
                 <span>{{ 'back' | translate(locale) }}</span>
             </div>
             <div :class="['stepper-button next', !canContinue ? 'deactivated' : '']" @click="nextStep()">
                 <span>{{ (finalStep) ? 'finish' : 'next' | translate(locale) }}</span>
-                <i class="material-icons">keyboard_arrow_right</i>
+                <i v-if="isRTL" class="material-icons">keyboard_arrow_left</i>
+                <i v-else class="material-icons">keyboard_arrow_right</i>
             </div>
         </div>
     </div>
@@ -65,6 +69,10 @@ export default {
       default: "en"
     },
     topButtons: {
+      type: Boolean,
+      default: false
+    },
+    isRTL: {
       type: Boolean,
       default: false
     },

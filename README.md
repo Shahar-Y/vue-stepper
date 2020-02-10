@@ -4,7 +4,7 @@
 <img src="https://media.giphy.com/media/26Fff0ZKP893tSJ5m/giphy.gif" />
 </p>
 
-Stepper for Vue.
+Stepper for Vue by the Slow Loris team, with changes by Shahar Yair.
 
 A simple stepper with simple actions such as next, back and finish to perform simple forms.
 
