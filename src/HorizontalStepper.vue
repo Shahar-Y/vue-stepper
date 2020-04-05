@@ -243,7 +243,7 @@ export default {
 };
 </script>
 
-<style src="./HorizontalStepper.scss" scoped lang="scss">
+<style src="./HorizontalStepper.css" scoped lang="css">
 
 </style>
 <style scoped>

@@ -1,0 +1,143 @@
+.stepper-box {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    min-height: 200px;
+}
+.stepper-box .top {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.stepper-box .top .stepper-button-top {
+    z-index: 20;
+    padding: 0.4rem;
+    border-radius: 100rem;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stepper-box .top .stepper-button-top.next {
+    border: 2px solid #3383c8;
+    color: #3383c8;
+    right: 1%;
+}
+.stepper-box .top .stepper-button-top.next.deactivated {
+    border: 2px solid #ccc !important;
+    color: #ccc;
+    cursor: not-allowed !important;
+}
+.stepper-box .top .stepper-button-top.previous {
+    color: #333;
+    left: 1%;
+}
+.stepper-box .top .divider-line {
+    border-bottom: 1px solid #ccc;
+    height: 2px;
+    position: absolute;
+}
+@media (max-width: 767px) {
+    .stepper-box .top .divider-line {
+        width: 90%;
+   }
+}
+.stepper-box .top .steps-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 95%;
+    left: 0;
+    padding: 2% 4%;
+}
+@media (max-width: 767px) {
+    .stepper-box .top .steps-wrapper {
+        width: 90%;
+        justify-content: center;
+   }
+}
+.stepper-box .top .steps-wrapper .step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .stepper-box .top .steps-wrapper .step {
+        width: 100% !important;
+   }
+}
+@media (max-width: 767px) {
+    .stepper-box .top .steps-wrapper .step.deactivated {
+        display: none;
+   }
+}
+.stepper-box .top .steps-wrapper .step.deactivated .circle i {
+    background-color: #bbb !important;
+}
+.stepper-box .top .steps-wrapper .step.deactivated .step-title {
+    opacity: 0.35;
+}
+.stepper-box .top .steps-wrapper .step .circle {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    background-color: white;
+}
+.stepper-box .top .steps-wrapper .step .circle i {
+    background-color: #3383c8;
+    color: #fff;
+    border-radius: 100rem;
+    padding: 1rem;
+}
+.stepper-box .top .steps-wrapper .step .step-title {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+.stepper-box .top .steps-wrapper .step .step-title h1, .stepper-box .top .steps-wrapper .step .step-title h2, .stepper-box .top .steps-wrapper .step .step-title h3, .stepper-box .top .steps-wrapper .step .step-title h4, .stepper-box .top .steps-wrapper .step .step-title h5 {
+    margin: 0 0 0.2rem 0;
+    color: #333;
+    font-weight: bold;
+}
+.stepper-box .top .steps-wrapper .step .step-title .step-subtitle {
+    font-weight: lighter;
+    margin: 0;
+    color: #555;
+}
+.stepper-box .content {
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+.stepper-box .bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-top: 1px solid #ccc;
+}
+.stepper-box .bottom.only-next {
+    justify-content: flex-end;
+}
+.stepper-box .bottom .stepper-button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stepper-box .bottom .stepper-button.next {
+    background-color: #3383c8;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.stepper-box .bottom .stepper-button.next.deactivated {
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+}
+.stepper-box .bottom .stepper-button.previous {
+    color: #333;
+}
